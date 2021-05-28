@@ -1,0 +1,10 @@
+package org.serratec.projeto01;
+
+public class Projeto01App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
