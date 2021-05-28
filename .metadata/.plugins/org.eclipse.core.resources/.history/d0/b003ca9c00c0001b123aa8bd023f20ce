@@ -1,0 +1,25 @@
+package org.serratec.projeto03.models;
+
+public class Operacao {
+	private TipoOperacao operacao;
+	private Double valor;
+	
+	public Operacao(TipoOperacao tipoConta, Double valor) {
+		super();
+		this.operacao = tipoConta;
+		this.valor = valor;
+	}
+	public TipoOperacao getTipoConta() {
+		return operacao;
+	}
+	public void setTipoConta(TipoOperacao tipoConta) {
+		this.operacao = tipoConta;
+	}
+	public Double getValor() {
+		return valor;
+	}
+	public void setValor(Double valor) {
+		this.valor = valor;
+	}
+	
+}

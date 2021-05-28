@@ -1,0 +1,14 @@
+package org.serratec.projeto03.models;
+
+public enum TipoOperacao {
+	
+	
+	DEBITO("debito"), CREDITO("credito");
+	private final String descricao;
+	TipoOperacao(String string) {
+		
+	}
+
+	
+	
+}

@@ -1,0 +1,5 @@
+package org.serratec.projeto03.util;
+
+public class ExceptionController {
+
+}

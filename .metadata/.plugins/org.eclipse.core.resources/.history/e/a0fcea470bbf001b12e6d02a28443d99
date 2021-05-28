@@ -1,0 +1,43 @@
+package org.serratec.backend.projeto02.controllers;
+
+import java.util.List;
+
+import org.serratec.backend.projeto02.model.ToDoEntity;
+import org.serratec.backend.projeto02.service.ToDoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/todo")
+public class ToDoController {
+
+	@Autowired /* Realiza a injeção de dependência da classe service; */
+	ToDoService service;
+
+	//Função de GET;
+	@GetMapping
+	public List<ToDoEntity> toDo() {
+		/* Puxo o método da classe service sem a necessidade de instanciar a classe */
+		return service.criarListar();
+	}
+
+	//Função de POST;
+	@PostMapping
+	public List<ToDoEntity> adicionarTarefa(@RequestBody ToDoEntity obj) {
+		service.adicionarEvento(obj);
+		return toDo();
+	}
+
+	//Função de DELETE;
+	@DeleteMapping ("/remove")
+	public List<ToDoEntity> removerTarefa(@RequestParam Integer id) {
+		service.deletarTarefa(id);
+		return toDo();
+	}
+}

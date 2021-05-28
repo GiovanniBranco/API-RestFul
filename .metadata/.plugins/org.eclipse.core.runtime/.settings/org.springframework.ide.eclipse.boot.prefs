@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=1
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=projeto03
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=2.5.0
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=3 projeto das aulas de Spring
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=org.serratec
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=11
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=projeto03
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=org.serratec.projeto03
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packaging=jar
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.type=MAVEN
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.version=0.0.1-SNAPSHOT
+org.springframework.ide.eclipse.boot.wizard.initializr.url=https\://start.spring.io\n

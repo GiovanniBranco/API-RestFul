@@ -1,0 +1,16 @@
+package org.serratec.projeto03.util;
+
+import org.serratec.projeto03.exceptions.ContaNotFound;
+import org.serratec.projeto03.models.Conta;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class ExceptionController{
+	
+	@ExceptionHandler(ContaNotFound.class)
+	
+	public ResponseEntity<String> tratando
+	
+}

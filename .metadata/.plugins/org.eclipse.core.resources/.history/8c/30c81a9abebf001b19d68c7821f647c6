@@ -1,0 +1,11 @@
+package org.serratec.backend.projeto02.exceptions;
+
+public class ToDoNotFoundException extends Exception{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4795849089219685380L;
+
+
+}

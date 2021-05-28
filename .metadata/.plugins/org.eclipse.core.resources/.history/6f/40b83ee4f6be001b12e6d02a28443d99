@@ -1,0 +1,52 @@
+package org.serratec.projeto01.service;
+
+import org.serratec.projeto01.model.CalculatorModel;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CalculadoraService {
+	
+	public Double calcular(CalculatorModel calculator) {
+		if(calculator.getOperador() != null) {
+			switch (calculator.getOperador()) {
+			case "+":
+				return somar(calculator);
+			case "-":
+				return subtrair(calculator);
+			case "*":
+				return multiplicar(calculator);
+			case "/":
+				return dividir(calculator);
+
+			default:
+				break;
+			}
+		}
+	}
+	
+	
+	public Double somar(CalculatorModel calculator) {
+		if("+".equals(calculator.getOperador())) {
+			return (calculator.getN1() + calculator.getN2());	
+		}
+		System.out.println("Operador inválido para soma");
+		return null;
+	}
+	
+	public Double subtrair(CalculatorModel calculator) {
+		return (calculator.getN1() - calculator.getN2());
+	}
+
+	public Double multiplicar(CalculatorModel calculator) {
+		return (calculator.getN1() * calculator.getN2());
+	}
+	
+	public Double dividir(CalculatorModel calculator) {
+		
+		if(calculator.getN2() ==0) {
+			System.out.println("O divisor deve ser diferente de 0");
+			return null;
+		}
+		return (calculator.getN1() / calculator.getN2());
+	}
+}

@@ -1,0 +1,8 @@
+package org.serratec.backend.projeto02.controllers;
+
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class ExceptionsController {
+
+}

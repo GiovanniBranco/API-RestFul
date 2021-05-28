@@ -1,0 +1,47 @@
+package org.serratec.projeto03.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.serratec.projeto03.models.Conta;
+import org.springframework.stereotype.Service;
+
+@Service
+public class Api {
+	List<Conta> contas = new ArrayList<>();
+	
+	
+	public List<Conta> getAll(){
+		return contas;
+	}
+	
+	public Conta getOne(String numero) {
+		for (Conta conta : contas) {
+			if(numero==conta.getnumero()) {
+				return conta;
+			}	
+		}
+		return null;
+	}
+	
+	public Conta create(Conta conta) {
+		for (Conta c : contas) {
+			if(c.equals(conta)) {		
+				return null;
+			}
+		}
+		contas.add(conta);
+		return conta;
+	}
+	
+	public Conta update(String numero, Conta conta) {
+		for (Conta c : contas) {
+			if(c.getnumero() == numero) {
+				c.setTitular(conta.getTitular());
+				
+				return conta;
+			}
+		}
+		return null;
+	}
+}

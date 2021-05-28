@@ -1,0 +1,5 @@
+package org.serratec.backend.projeto02.controllers;
+
+public class ExceptionsControllers {
+
+}

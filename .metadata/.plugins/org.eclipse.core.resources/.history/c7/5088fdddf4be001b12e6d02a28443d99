@@ -1,0 +1,26 @@
+package org.serratec.projeto01.service;
+
+import org.serratec.projeto01.model.CalculatorModel;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CalculadoraService {
+	public Double somar(CalculatorModel calculator) {
+		if(calculator.getOperador().equals("+")) {
+			return (calculator.getN1() + calculator.getN2());	
+		}
+		return null;
+	}
+	
+	public Double subtrair(Double n1, Double n2) {
+		return n1-n2;
+	}
+
+	public Double multiplicar(Double n1, Double n2) {
+		return n1*n2;
+	}
+	
+	public Double dividir(Double n1, Double n2) {
+		return n1/n2;
+	}
+}

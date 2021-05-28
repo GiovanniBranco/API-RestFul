@@ -1,0 +1,44 @@
+package org.serratec.projeto01.controllers;
+
+import org.serratec.projeto01.model.CalculatorModel;
+import org.serratec.projeto01.service.CalculadoraService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController //Indica que é o Controller;
+@RequestMapping("/calculadora") //Cria o endPoint;	
+public class CalculadoraController {
+
+	@Autowired
+	CalculadoraService service;
+	
+//	@GetMapping("/soma")
+//	public Double somar(@RequestParam Integer n1, Integer n2) {
+//		return service.somar(n1 + n2);
+//	}
+	
+	@PostMapping("/soma")
+	public Double somar(@RequestBody CalculatorModel calculator) {
+		return service.somar(calculator);
+	}
+	
+	@GetMapping("/sub")
+	public Double subtrair(@RequestParam Double n1, Double n2) {
+		return service.subtrair(n1, n2);
+	}
+	
+	@GetMapping("/mult")
+	public Double multiplicar(@RequestParam Double n1, Double n2) {
+		return service.multiplicar(n1, n2);
+	}
+	
+	@GetMapping("/div")
+	public Double dividir(@RequestParam Double n1, Double n2) {
+		return service.dividir(n1, n2);
+	}
+}

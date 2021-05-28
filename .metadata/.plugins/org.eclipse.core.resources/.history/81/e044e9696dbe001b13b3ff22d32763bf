@@ -1,0 +1,41 @@
+package org.serratec.backend.projeto02.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.serratec.backend.projeto02.model.ToDoEntity;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ToDoService {
+	List<ToDoEntity> tarefas = new ArrayList<ToDoEntity>();
+
+	//Lista as tarefas
+	public List<ToDoEntity> listar(){
+		return tarefas;
+	}
+	
+	//Cria a lista de tarefas
+	public List<ToDoEntity> criarLista(){	
+		tarefas.add(new ToDoEntity(1, "Ir ao dentista", "Consulta"));
+		tarefas.add(new ToDoEntity(2, "Ir ao mercado", "Comprar maça e banana"));
+		tarefas.add(new ToDoEntity(3, "Encomendar torta", "Torta de massa branca com brigadeiro para o sabádo"));
+		tarefas.add(new ToDoEntity(4, "Treinar perna hoje", "Comprar maça e banana"));
+		
+		return tarefas;	
+	}
+
+	//Adiciona tarefas
+	public void adicionarEvento(ToDoEntity obj) {
+		tarefas.add(new ToDoEntity(obj.getId(), obj.getName(), obj.getDescription()));
+	}
+	
+	//Remove tarefas
+	public void deletarTarefa(Integer id) {
+		for (ToDoEntity toDoEntity : tarefas) {
+			if(toDoEntity.getId() == id) {
+				tarefas.remove(toDoEntity);
+			}
+		}
+	}
+}
