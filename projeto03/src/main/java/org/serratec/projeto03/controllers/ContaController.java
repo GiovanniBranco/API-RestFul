@@ -3,9 +3,11 @@ package org.serratec.projeto03.controllers;
 import java.util.List;
 
 import org.serratec.projeto03.exceptions.ContaNotFound;
-import org.serratec.projeto03.models.Conta;
+import org.serratec.projeto03.exceptions.SaldoNegativo;
+import org.serratec.projeto03.model.dto.ContaDto;
+import org.serratec.projeto03.models.ContaEntity;
 import org.serratec.projeto03.models.Operacao;
-import org.serratec.projeto03.services.Api;
+import org.serratec.projeto03.services.ContaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,55 +25,40 @@ import org.springframework.web.bind.annotation.RestController;
 public class ContaController {
 	
 	@Autowired
-	Api service;
+	ContaService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Conta>>getAll(){
-		return new ResponseEntity<List<Conta>>(service.getAll(), HttpStatus.OK);
+	public ResponseEntity<List<ContaEntity>>getAll(){
+		return new ResponseEntity<List<ContaEntity>>(service.getAll(), HttpStatus.OK);
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Conta> getOne(@PathVariable Integer id) throws ContaNotFound {
-		return new ResponseEntity<Conta> (service.getOne(id), HttpStatus.FOUND);
+	public ResponseEntity<ContaEntity> getOne(@PathVariable Integer id) throws ContaNotFound {
+		return new ResponseEntity<ContaEntity> (service.getById(id), HttpStatus.OK);
 	}
 	
+//	@GetMapping("/{name}")
+//	public ResponseEntity<List<ContaEntity>> getByName(@PathVariable String titular) throws ContaNotFound {
+//		return new ResponseEntity<List<ContaEntity>> (service.getByName(titular), HttpStatus.OK);
+//	}
+
 	@PostMapping
-	public ResponseEntity<Conta> create(@RequestBody Conta conta) {
-		return new ResponseEntity<Conta> (service.create(conta), HttpStatus.CREATED);
+	public ResponseEntity<ContaEntity> create(@RequestBody ContaEntity conta) {
+		return new ResponseEntity<ContaEntity> (service.create(conta), HttpStatus.CREATED);
 	}
 	
 	@PostMapping("/{id}")
-	public ResponseEntity<Conta> atualizarSalddo(@PathVariable Integer id, @RequestBody Operacao operacao) throws ContaNotFound{
-		return new ResponseEntity<Conta> (service.atualizarSaldo(id, operacao), HttpStatus.OK);
+	public ResponseEntity<ContaDto> atualizarSalddo(@PathVariable Integer id, @RequestBody Operacao operacao) throws ContaNotFound, SaldoNegativo{
+		return new ResponseEntity<ContaDto> (service.atualizarSaldo(id, operacao), HttpStatus.OK);
 	}
 	
 	@PutMapping("/{id}")
-	public Conta update(@PathVariable Integer id, @RequestBody Conta conta) throws ContaNotFound {
-		return service.update(id, conta);
+	public ResponseEntity<ContaEntity> update(@PathVariable Integer id, @RequestBody ContaEntity conta) throws ContaNotFound {
+		return new ResponseEntity<ContaEntity> (service.update(id, conta), HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/{id}")
-	public String delete(@PathVariable Integer id) throws ContaNotFound {
-		return service.delete(id);
+	public ResponseEntity<String> delete(@PathVariable Integer id){
+		return new ResponseEntity<String> (service.delete(id), HttpStatus.OK);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

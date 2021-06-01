@@ -1,5 +1,7 @@
 package org.serratec.projeto03.models;
 
+import org.serratec.projeto03.enums.TipoOperacao;
+
 public class Operacao {
 	private TipoOperacao operacao;
 	private Double valor;
