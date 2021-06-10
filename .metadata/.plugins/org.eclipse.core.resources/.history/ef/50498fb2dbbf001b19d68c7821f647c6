@@ -1,5 +1,0 @@
-package org.serratec.projeto03.exceptions;
-
-public class ContaNotFound {
-
-}

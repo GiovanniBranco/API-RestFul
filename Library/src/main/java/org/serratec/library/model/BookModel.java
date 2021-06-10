@@ -1,18 +1,21 @@
 package org.serratec.library.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
-
-import org.serratec.library.enums.BookType;
 
 @Entity
+@Table(name="BOOK")
 public class BookModel {
 	
 	@Id
@@ -20,20 +23,23 @@ public class BookModel {
 	private Long id;
 	
 	@NotNull
-	@Size(min = 5, max = 30)
 	private String title;
-	
-	@NotNull
-	private BookType type;
-	
-	@NotNull
-	@Size(min = 10, max = 40)
-	private String author;
 	
 	@Past
 	private LocalDate date;
+	//Usar para cadastrar já com a data atual;
+//	private LocalDate date = LocalDate.now(); 
 
+
+	// Puxando id da entidade CategoryModel e sendo feito o referenciamento
+	@ManyToOne
+	@JoinColumn(referencedColumnName = "id") 
+	private CategoryModel category;
 	
+	@ManyToMany(mappedBy = "books")
+	private List<AuthorModel> authors;
+	
+
 	public Long getId() {
 		return id;
 	}
@@ -50,20 +56,20 @@ public class BookModel {
 		this.title = title;
 	}
 
-	public BookType getType() {
-		return type;
+	public CategoryModel getCategory() {
+		return category;
 	}
 
-	public void setType(BookType type) {
-		this.type = type;
+	public void setCategory(CategoryModel category) {
+		this.category = category;
 	}
 
-	public String getAuthor() {
-		return author;
+	public List<AuthorModel> getAuthors() {
+		return authors;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setAuthors(List<AuthorModel> authors) {
+		this.authors = authors;
 	}
 
 	public LocalDate getDate() {

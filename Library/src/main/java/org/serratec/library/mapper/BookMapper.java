@@ -9,9 +9,8 @@ public class BookMapper {
 	public BookModel toModel(BookDto dto) {
 		BookModel book = new BookModel();
 		
-		book.setAuthor(dto.getAuthor());
 		book.setTitle(dto.getTitle());
-		book.setType(dto.getType());
+		book.setCategory(dto.getCategory());
 		book.setDate(dto.getDate());
 		
 		return book;
@@ -20,10 +19,9 @@ public class BookMapper {
 	public BookDto toDto(BookModel book) {
 		BookDto dto = new BookDto();
 		
-		dto.setAuthor(book.getAuthor());
 		dto.setTitle(book.getTitle());
-		dto.setType(book.getType());
 		dto.setDate(book.getDate());
+		dto.setCategory(book.getCategory());
 		
 		return dto;
 	}

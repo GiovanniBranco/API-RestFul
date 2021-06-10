@@ -1,5 +1,0 @@
-package org.serratec.backend.projeto02.exceptions;
-
-public class ToDoNotFoundException {
-
-}

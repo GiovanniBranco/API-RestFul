@@ -19,3 +19,5 @@ Esrc/main/java/org/serratec/projeto03/repositorys/ContaRepository.java,1\a\1a73
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 l
 <src/main/java/org/serratec/projeto03/models/ContaEntity.java,4\c\4c2d8f0dc2ad32aeb9b8fc71a5c3d8f29e46944b
+l
+<src/main/java/org/serratec/projeto03/enums/TipoOperacao.java,8\f\8facf7a6dd51446c947b057227cc8877ad18086f
