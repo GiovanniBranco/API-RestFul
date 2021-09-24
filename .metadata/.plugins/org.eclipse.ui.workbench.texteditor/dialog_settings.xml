@@ -6,14 +6,14 @@
 		<item key="wholeword" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="findbynu"/>
+			<item value="/ TODO Auto-generated constructor stub"/>
 			<item value="// TODO Auto-generated constructor stub"/>
 			<item value="ClientDto"/>
 			<item value="category"/>
 			<item value="CategoryModel"/>
 			<item value="CategoryDto"/>
 			<item value="BookModel"/>
-			<item value="POST"/>
-			<item value="title"/>
 		</list>
 		<list key="replacehistory">
 			<item value="ClientEntity"/>
