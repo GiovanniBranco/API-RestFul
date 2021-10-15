@@ -1,7 +1,9 @@
 /target/
 .metadata
+*/.metadata
 /.metadata
 .sonarlint
+*/.sonarlint
 .classpath
 .project
 .settings
