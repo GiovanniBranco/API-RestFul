@@ -1,11 +1,0 @@
-
-j
-java:S4973#"9Use the "equals" method if value comparison was intended.(ºõ±úÿÿÿÿÿ8Î„Ì•›/HæRMAJORZBUG
-‘
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ò½™ìÿÿÿÿÿ8Î„Ì•›/HåRMINORZ
-CODE_SMELL
-j
-java:S4973-"9Use the "equals" method if value comparison was intended.(ºõ±úÿÿÿÿÿ8Î„Ì•›/HçRMAJORZBUG
-Ÿ
-java:S1192'"dDefine a constant instead of duplicating this literal "NÃ£o foi possÃ­vel localizar o ID: " 3 times.(ö£¼ûÿÿÿÿ8Í­ä››/HèRCRITICALZ
-CODE_SMELL
